@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intelligent Chatbot</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    /* ===== Body Styles ===== */
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f2f6fc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    /* ===== Chat Container ===== */
+    .chat-container {
+      width: 400px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* ===== Header ===== */
+    .chat-header {
+      background-color: #4a90e2;
+      color: #fff;
+      padding: 15px;
+      font-size: 18px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    /* ===== Messages Area ===== */
+    .chat-messages {
+      flex: 1;
+      padding: 10px;
+      overflow-y: auto;
+    }
+
+    .message {
+      margin: 5px 0;
+      padding: 8px 12px;
+      border-radius: 15px;
+      max-width: 80%;
+      word-wrap: break-word;
+    }
+
+    .user {
+      background-color: #e1f0ff;
+      align-self: flex-end;
+    }
+
+    .bot {
+      background-color: #d4edda;
+      align-self: flex-start;
+    }
+
+    /* ===== Input Area ===== */
+    .chat-input {
+      display: flex;
+      border-top: 1px solid #ddd;
+    }
+
+    .chat-input input {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      outline: none;
+      font-size: 16px;
+    }
+
+    .chat-input button {
+      background-color: #4a90e2;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+
+    .chat-input button:hover {
+      background-color: #357ab8;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-container">
+    <div class="chat-header">Intelligent Chatbot</div>
+    <div class="chat-messages" id="chat-messages"></div>
+    <div class="chat-input">
+      <input type="text" id="user-input" placeholder="Type your question...">
+      <button id="send-btn">Send</button>
+    </div>
+  </div>
+
+  <script>
+    const messagesContainer = document.getElementById('chat-messages');
+const inputField = document.getElementById('user-input');
+const sendBtn = document.getElementById('send-btn');
+
+// Function to add a message to chat
+function addMessage(text, type) {
+  const msgDiv = document.createElement('div');
+  msgDiv.classList.add('message', type);
+  msgDiv.textContent = text;
+  messagesContainer.appendChild(msgDiv);
+  messagesContainer.scrollTop = messagesContainer.scrollHeight;
+}
+
+// Send message to server
+async function sendMessage() {
+  const userText = inputField.value.trim();
+  if (!userText) return;
+
+  addMessage(userText, 'user'); // show user message
+  inputField.value = '';
+
+  try {
+    // POST message to your server
+    const response = await fetch('/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: userText })
+    });
+
+    const data = await response.json();
+    addMessage(data.reply, 'bot'); // show bot reply
+
+  } catch (err) {
+    addMessage("Error contacting server.", 'bot');
+    console.error(err);
+  }
+}
+
+// Event listeners
+sendBtn.addEventListener('click', sendMessage);
+inputField.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') sendMessage();
+});
+  </script>
+</body>
+</html>

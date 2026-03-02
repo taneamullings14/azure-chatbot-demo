@@ -1,0 +1,301 @@
+{
+  "settings": {
+    "languages": [
+      "en"
+    ],
+    "forceNER": true,
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "deadlin,is,the,when": {
+            "intent": "deadline",
+            "domain": "default"
+          },
+          "applic,close,date": {
+            "intent": "deadline",
+            "domain": "default"
+          },
+          "how,is,much,tuition": {
+            "intent": "tuition",
+            "domain": "default"
+          },
+          "are,fee,the,what": {
+            "intent": "tuition",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "deadline": "default",
+          "tuition": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "When is the deadline?",
+            "intent": "deadline"
+          },
+          {
+            "domain": "default",
+            "utterance": "Application closing date?",
+            "intent": "deadline"
+          },
+          {
+            "domain": "default",
+            "utterance": "How much is tuition?",
+            "intent": "tuition"
+          },
+          {
+            "domain": "default",
+            "utterance": "What are the fees?",
+            "intent": "tuition"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "when": 1,
+              "is": 1,
+              "the": 1,
+              "deadlin": 1,
+              "applic": 1,
+              "close": 1,
+              "date": 1,
+              "how": 1,
+              "much": 1,
+              "tuition": 1,
+              "what": 1,
+              "are": 1,
+              "fee": 1
+            },
+            "intents": {
+              "deadline": 1,
+              "tuition": 1
+            },
+            "intentFeatures": {
+              "deadline": {
+                "when": 1,
+                "is": 1,
+                "the": 1,
+                "deadlin": 1,
+                "applic": 1,
+                "close": 1,
+                "date": 1
+              },
+              "tuition": {
+                "how": 1,
+                "much": 1,
+                "is": 1,
+                "tuition": 1,
+                "what": 1,
+                "are": 1,
+                "the": 1,
+                "fee": 1
+              }
+            },
+            "featuresToIntent": {
+              "when": [
+                "deadline"
+              ],
+              "is": [
+                "deadline",
+                "tuition"
+              ],
+              "the": [
+                "deadline",
+                "tuition"
+              ],
+              "deadlin": [
+                "deadline"
+              ],
+              "applic": [
+                "deadline"
+              ],
+              "close": [
+                "deadline"
+              ],
+              "date": [
+                "deadline"
+              ],
+              "how": [
+                "tuition"
+              ],
+              "much": [
+                "tuition"
+              ],
+              "tuition": [
+                "tuition"
+              ],
+              "what": [
+                "tuition"
+              ],
+              "are": [
+                "tuition"
+              ],
+              "fee": [
+                "tuition"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "when",
+                "is",
+                "the",
+                "deadlin",
+                "applic",
+                "close",
+                "date",
+                "how",
+                "much",
+                "tuition",
+                "what",
+                "are",
+                "fee"
+              ],
+              "intents": [
+                "deadline",
+                "tuition"
+              ],
+              "perceptrons": [
+                [
+                  3.7202305793762207,
+                  2.208956241607666,
+                  2.2115771770477295,
+                  3.7202305793762207,
+                  4.014823913574219,
+                  4.014823913574219,
+                  4.014823913574219,
+                  -1.5261316299438477,
+                  -1.5261316299438477,
+                  -1.5261316299438477,
+                  -1.5222405195236206,
+                  -1.5222405195236206,
+                  -1.5222405195236206,
+                  2.3451631704490676
+                ],
+                [
+                  -2.317791223526001,
+                  1.2997641563415527,
+                  1.2811975479125977,
+                  -2.317791223526001,
+                  -0.7072464823722839,
+                  -0.7072464823722839,
+                  -0.7072464823722839,
+                  3.6380436420440674,
+                  3.6380436420440674,
+                  3.6380436420440674,
+                  3.619356155395508,
+                  3.619356155395508,
+                  3.619356155395508,
+                  2.1087090715268433
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "When is the deadline?"
+      ],
+      [
+        "en",
+        "Application closing date?"
+      ],
+      [
+        "en",
+        "How much is tuition?"
+      ],
+      [
+        "en",
+        "What are the fees?"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "en": {
+        "deadline": [
+          {
+            "answer": "The fall deadline is August 1st."
+          }
+        ],
+        "tuition": [
+          {
+            "answer": "Tuition is $4,500 per semester."
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}

@@ -1,0 +1,21 @@
+{"time":"2026-03-01T18:25:41.860Z","user":"When is the deadline?","bot":"The fall deadline is August 1st."}
+{"time":"2026-03-01T18:34:00.563Z","user":"when is the deadline","bot":"The fall deadline is August 1st."}
+{"time":"2026-03-01T18:34:28.118Z","user":" deadline","bot":"The fall deadline is August 1st."}
+{"time":"2026-03-01T18:34:33.587Z","user":" dead","bot":"Sorry, I didn't understand."}
+{"time":"2026-03-01T18:35:05.877Z","user":" line","bot":"Sorry, I didn't understand."}
+{"time":"2026-03-01T18:39:26.418Z","user":"What is cloud computing?","bot":"Tuition is $4,500 per semester."}
+{"time":"2026-03-01T18:46:32.218Z","user":" cloud computing","bot":"Sorry, I didn't understand."}
+{"time":"2026-03-01T18:46:46.545Z","user":"what is cloud computing","bot":"Tuition is $4,500 per semester."}
+{"user":"hello","bot":"I'm a chatbot running on an Azure Virtual Machine. You can ask me about cloud computing, Azure, virtual machines, and networks.","time":"2026-03-01T22:24:23.869Z"}
+{"user":"what is the deadline","bot":"The fall deadline is August 1st.","time":"2026-03-01T22:33:09.253Z"}
+{"user":"tuition","bot":"Tuition is $4,500 per semester.","time":"2026-03-01T22:33:16.007Z"}
+{"user":"explain virtual machine","bot":"A virtual machine (VM) is a software-based computer that runs on a physical machine and behaves like a separate computer.","time":"2026-03-01T22:33:23.292Z"}
+{"user":"tell me more about you","bot":"I'm a chatbot running on an Azure Virtual Machine. You can ask me about cloud computing, Azure, virtual machines, and networks.","time":"2026-03-01T22:33:42.788Z"}
+{"user":"what is the deadline","bot":"The fall deadline is August 1st.","time":"2026-03-01T22:44:54.878Z"}
+{"user":"tuition","bot":"Tuition is $4,500 per semester.","time":"2026-03-01T22:45:00.891Z"}
+{"user":"explain virtual machine","bot":"A virtual machine (VM) is a software-based computer that runs on a physical machine and behaves like a separate computer.","time":"2026-03-01T22:45:09.105Z"}
+{"user":"tell me more about you","bot":"I'm a chatbot running on an Azure Virtual Machine. You can ask me about cloud computing, Azure, virtual machines, and networks.","time":"2026-03-01T22:45:37.093Z"}
+{"user":"what is the deadline","bot":"The fall deadline is August 1st.","time":"2026-03-02T00:06:19.697Z"}
+{"user":"tuition","bot":"Tuition is $4,500 per semester.","time":"2026-03-02T00:06:24.577Z"}
+{"user":"explain virtual machine","bot":"A virtual machine (VM) is a software-based computer that runs on a physical machine and behaves like a separate computer.","time":"2026-03-02T00:06:33.258Z"}
+{"user":"hello","bot":"I'm a chatbot running on an Azure Virtual Machine. You can ask me about cloud computing, Azure, virtual machines, and networks.","time":"2026-03-02T00:06:38.430Z"}
